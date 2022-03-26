@@ -35,7 +35,9 @@
     "start": "ember serve",
     "format": "prettier --config ../../../.prettier.js --write **/*.js",
     "test": "ember test ci --port=7300",
-    "clean": "rimraf dist tmp"
+    "clean": "rimraf dist tmp",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "@pollyjs/adapter-fetch": "^0.0.0",
@@ -49,7 +51,8 @@
     "broccoli-source": "^1.1.0",
     "browser-resolve": "^1.11.2",
     "debug": "^3.1.0",
-    "ember-cli-babel": "^6.6.0"
+    "ember-cli-babel": "^6.6.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
@@ -84,5 +87,6 @@
     "before": [
       "proxy-server-middleware"
     ]
-  }
+  },
+  "snyk": true
 }
